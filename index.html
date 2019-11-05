@@ -31,6 +31,9 @@
             console.log('will jump');
             wx.miniProgram.navigateTo({url: '/pages/jump/index?url=https://daojia.jd.com/html/index.html?channel=jdapp'});
         })
+      document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+      });
     };
   </script>
 </html>
