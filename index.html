@@ -36,6 +36,17 @@
       document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         WeixinJSBridge.call('hideOptionMenu');
       });
+      var isPageHide = false;
+      window.addEventListener('pageshow', function () {
+        alert('pageshow');
+        if (isPageHide) {
+          window.location.reload();
+         }
+       });
+      window.addEventListener('pagehide', function () {
+        alert('pagehide');
+        isPageHide = true;
+      });
       alert('hehe2');
     };
   </script>
