@@ -33,14 +33,15 @@
             console.log('will jump');
             wx.miniProgram.navigateTo({url: '/pages/jump/index?url=https://daojia.jd.com/html/index.html?channel=jdapp'});
         })
-      document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+      function onBridgeReady() {
         WeixinJSBridge.call('hideOptionMenu');
-      });
+      }
+      document.addEventListener('WeixinJSBridgeReady', onBridgeReady);
       var isPageHide = false;
       window.addEventListener('pageshow', function () {
         alert('pageshow');
         if (isPageHide) {
-          window.location.reload();
+          document.addEventListener('WeixinJSBridgeReady', onBridgeReady);
          }
        });
       window.addEventListener('pagehide', function () {
