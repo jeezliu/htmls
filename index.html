@@ -42,6 +42,7 @@
         alert('pageshow');
         if (isPageHide) {
           document.addEventListener('WeixinJSBridgeReady', onBridgeReady);
+          window.location.reload();
          }
        });
       window.addEventListener('pagehide', function () {
