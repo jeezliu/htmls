@@ -39,8 +39,9 @@
       var isPageHide = false;
       window.addEventListener('pageshow', function () {
         if (isPageHide) {
+          alert('add again');
           document.addEventListener('WeixinJSBridgeReady', onBridgeReady);
-          window.location.reload();
+//           window.location.reload();
          }
        });
       window.addEventListener('pagehide', function () {
