@@ -39,7 +39,9 @@
         WeixinJSBridge.call('hideOptionMenu');
       });
       var isPageHide = false;
+      alert('on load');
       window.addEventListener('pageshow', function () {
+        alert('pageshow');
         if (isPageHide) {
           alert('add again');
           document.addEventListener('WeixinJSBridgeReady', function() {
@@ -49,6 +51,7 @@
          }
        });
       window.addEventListener('pagehide', function () {
+        alert('pagehide');
         isPageHide = true;
       });
     };
